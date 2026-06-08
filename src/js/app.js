@@ -30,9 +30,9 @@ function render(variables = {}) {
 
   let name = variables.name !== null ? variables.name : "";
   let lastName = variables.lastName !== null ? variables.lastName : "";
-  let role = variables.role !== null ? variables.role : "Desarrollador Web";
-  let city = variables.city !== null ? variables.city : "Ciudad";
-  let country = variables.country !== null ? variables.country : "País";
+  let role = variables.role !== null ? variables.role : "";
+  let city = variables.city !== null ? variables.city : "";
+  let country = variables.country !== null ? variables.country : "";
 
   let twitterLink =
     variables.twitter !== null
