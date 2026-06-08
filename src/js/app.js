@@ -23,22 +23,17 @@ import "../style/index.css";
     }
  */
 function render(variables = {}) {
-  console.log("These are the current variables: ", variables); // print on the console
+  console.log("These are the current variables: ", variables);
 
-  // 1. Lógica de la portada (Se mantiene igual a tu plantilla)
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
-  // 2. CREACIÓN DE VARIABLES DINÁMICAS (Esto va aquí adentro)
-  // Evaluamos si el campo es null. Si tiene texto, lo usa; si no, pone un valor por defecto.
-  let name = variables.name !== null ? variables.name : "Tu nombre";
-  let lastName =
-    variables.lastName !== null ? variables.lastName : "Tu apellido";
+  let name = variables.name !== null ? variables.name : "";
+  let lastName = variables.lastName !== null ? variables.lastName : "";
   let role = variables.role !== null ? variables.role : "Desarrollador Web";
   let city = variables.city !== null ? variables.city : "Ciudad";
   let country = variables.country !== null ? variables.country : "País";
 
-  // 3. Enlaces dinámicos para las redes sociales concatenando el usuario ingresado
   let twitterLink =
     variables.twitter !== null
       ? `https://twitter.com/${variables.twitter}`
@@ -56,7 +51,6 @@ function render(variables = {}) {
       ? `https://instagram.com/${variables.instagram}`
       : "https://instagram.com/4geeksacademy";
 
-  // 4. Inyección del nuevo HTML dinámico en el widget_content
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
